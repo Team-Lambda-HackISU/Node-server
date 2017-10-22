@@ -5,15 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Reciept Reader</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css" />
 </head>
 <body>
-   <form action="/upload" method="post" enctype="multipart/form-data">
-    <div>
-        <input type="file" name="file">
-        <div class="button">
-            <button type="Submit" value="upload">Submit Youre Reciept</button>
+    <div class="uploadWrapper">
+  <form action="/upload" method="post" enctype="multipart/form-data" id="imageUploadForm" class="imageUploadForm">
+        <span class="helpText" id="helpText">Upload an image</span>
+        <input type='file' id="file" class="uploadButton" name="file" accept="image/*" />
+        <div id="uploadedImg" class="uploadedImg">
+          <span class="unveil"></span>
         </div>
-    </div>
-</form>
+        <span class="pickFile">
+          <button type="Submit" value="upload" class="pickFileButton">Submit</button>
+        </span>
+  </form>
+</div>
+<!--   <form action="/upload" method="post" enctype="multipart/form-data">-->
+<!--    <div>-->
+<!--        <input type="file" name="file">-->
+<!--        <div class="button">-->
+<!--            <button type="Submit" value="upload">Submit Youre Reciept</button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</form>-->
 </body>
+    <script type="text/javascript" src="https://code.createjs.com/movieclip-0.7.1.min.js"></script>
+    <script type="text/javascript" src="./js/EasePack.min.js"></script>
+    <script type="text/javascript" src="./js/requestAnimationFrame.js"></script>
+    <!--<script type="text/javascript" src="./js/main.js"></script>-->
 </html>

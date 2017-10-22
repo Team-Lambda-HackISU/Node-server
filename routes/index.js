@@ -11,11 +11,11 @@ const Storage = multer.diskStorage({
     }
 });
 const upload = multer({ storage: Storage })
-var xml2js = require('xml2js');
 const fetch = require('node-fetch');
-const util = require('util');
-require('util.promisify').shim();
-const parseXML = util.promisify(require("xml2js").parseString)
+var jsonParser = bodyParser.json()
+
+const walmart=require('../views/TheOG');
+const walmartSN=require('../views/storeNumber');
 
 // create application/x-www-form-urlencoded parser
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
@@ -26,18 +26,7 @@ const Vision = require('@google-cloud/vision');
 const vision = Vision();
 var fileName = "./uploads/bold-grocery-list.jpg";
 
-const request = {
-  source: {
-    filename: fileName
-  }
-};
 
-let getXML = (param, item) => {
-    return fetch(`http://www.supermarketapi.com/api.asmx/${param}?APIKEY=1d41310452&ItemName=${item}`)
-        .then(response => response.text())
-        .then(parseXML)
-        .then(response => console.log(response))
-}
 
 // Serves index.html file
 router.use(express.static('public'));
@@ -49,6 +38,13 @@ router.get('/testform', (req, res)=>{
 router.post ('/upload', upload.single('file'), (req,res)=>{
     let items;
     let valids = [];
+    let filePath = '/home/ubuntu/workspace/uploads/' + req.file.originalname;
+    console.log("file: " + filePath)
+    const request = {
+          source: {
+            filename: filePath
+          }
+        };
     vision.textDetection(request)
   .then((results) => {
         const detections = results[0].textAnnotations;
@@ -111,10 +107,48 @@ router.post('/android/upload', upload.single('file'), (req,res)=>{
       });
 });
 
+// Gets an object of correct words
 router.post('/groceries', urlencodedParser, (req, res)=>{
-    var poop = req.body;
-    console.log(poop);
-    res.send(poop);
+    var poop = req.body.items;
+    var priceList = {};
+    
+    async function collect (arr, list) {
+        // await walmart.getPrice(arr[0]);
+        for (var i=0; i<arr.length; i++){
+            let price = await walmart.getPrice(arr[i]);
+            list[arr[i]]=price;
+        }
+        console.log(list);
+        return list;
+    }
+    
+    collect(poop, priceList);
+    
+    
+})
+
+router.post('/gotMilk', bodyParser.json(), (req,res)=>{
+    var items = req.body.list;
+    var priceList = {};
+    var urlList = {};
+    async function collect (arr, list, urls) {
+        for (var i=0; i<arr.length; i++){
+            let price = await walmart.getPrice(arr[i]);
+            let url = await walmart.geturl(arr[i]);
+
+            list[arr[i]] = price;
+            list[arr[i] + "url"] = url;
+        }
+        // const storeNumber = await walmartSN.getSN(zip);
+        // list['nearest store'] = storeNumber;
+        console.log(list);
+        
+        res.json(list);
+       // res.json({"list" : list, "urls" : urls});
+    }
+    
+    collect(items, priceList)
+    .catch((err) => res.json({"error" : "Please Try Again Later"}));
 })
 
 module.exports = router;

@@ -12,7 +12,7 @@
     "url": "git+https://github.com/Team-Lambda-HackISU/Node-server.git"
   },
   "engines": {
-    "node": "6.2.0"
+    "node": "8.7.0"
   },
   "dependencies": {
     "@google-cloud/vision": "^0.12.0",
