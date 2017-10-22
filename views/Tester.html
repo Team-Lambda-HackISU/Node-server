@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Missing Items</title>
+    <style>
+      form {
+        /* Just to center the form on the page */
+        margin: 0 auto;
+        width: 45%;
+        /* To see the outline of the form */
+        padding: 1em;
+        border: 1px solid #CCC;
+        border-radius: 1em;
+      }
+      form div + div {
+        margin-top: 1em;
+      }
+      input:focus {
+        /* To give a little highlight on active elements */
+        border-color: #000;
+      }
+      .add_form_field {
+        /* To position the buttons to the same position of the text fields */
+        background-color: #38C71C;
+        /* same size as the label elements */
+      }
+      .last{
+        display: inline-block;
+      }
+      .button {
+        /* This extra margin represent roughly the same space as the space between the labels and their text fields */
+        margin-top:10px;vertical-align: Bottom; display: inline-block; background-color: #38C71C;
+      }
+      button{
+        height: 3em;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    
+      $(document).ready(function() {
+          var max_fields      = 10;
+          var wrapper         = $(".container1");
+          var add_button      = $(".add_form_field");
+        
+          var x = 1;
+          $(add_button).click(function(e){
+              e.preventDefault();
+              if(x < max_fields){
+                  x++;
+                  $(wrapper).append('<div><input type="text" name="mytext[]"/><a href="#" class="delete">Delete</a></div>'); //add input box
+              }
+        else
+        {
+        alert('You Reached the limits')
+        }
+          });
+        
+          $(wrapper).on("click",".delete", function(e){
+              e.preventDefault(); $(this).parent('div').remove(); x--;
+          })
+      });
+      
+    </script>
+</head>
+
+<body>
+    <form action="/groceries" method="post">
+        
+        
+        <div class="container1">
+          {% for word in words %}
+            {% if loop.last %}
+            <div class="last"><input type="text" name="items" value="{{word}}"><a href="#" class="delete">Delete</a></div>
+            
+            <button class="add_form_field">Add New Field &nbsp; <span style="font-size:16px; font-weight:bold;">+ </span></button>
+            
+            
+            <button class="button" type="submit">Add These Items</button>
+            
+            {% else %}
+            <div><input type="text" name="items" value="{{word}}"><a href="#" class="delete">Delete</a></div>
+            {% endif %}
+            
+            {% else %}
+            <div>
+              <p>No words were detected. Please upload a different picture.</p>
+              <h3><a href="/">Go Back</a></h3>
+            </div>
+          {% endfor %}
+         
+        
+       <!-- 
+       <div>
+          <label for="name">Missing Items:</label> <textarea id="Items" name="missingItems"></textarea>
+        </div>
+        -->
+        
+    </form>
+</body>
+
+</html>

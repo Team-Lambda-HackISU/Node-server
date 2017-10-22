@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "wise-obelisk-174917",
+  "private_key_id": "06afd491a088436b50ee57c6eb5991e265350c92",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDH8EYwHj4IDigv\nYz2vztAW3xL17T+ckcFVP2cgk6zBkXdYuGElFpZFDGSngLCg3ld2ccJ6+Dpg59sd\nc7x8B/Gdp3+YbbsngNITbHGiDFzI/QFLABZxdlxTOAf7ewnuoN5AfhOtDOmAHE1N\naO5Mri6oAUeLjlJ1Cc6/HVxoJt3g+kuLujJdy1vJXuN+aicDJLdVsj0CzSi99+FN\n8YsqSBz5Ohp1+rIraMiYiuiTgkjgt3vI9xMqsdCz81oILn6QcxdUG+xQJoi+fGfp\nOLOqLUeKcAPPJYfX2a9ZRxGP3yYwSKBoudlTuYPzDwIqgc6vqAWx0DNu58GephYc\ntVvVumaTAgMBAAECggEAOeoT8qk3765mHn/hJPVDmnRochsUY35m4ZIZhbqw/mrs\nBqN15D/cLEkQOOLShu6QqCsAmg0gH+TZN/lH3ieQ6clUcOtMHH+4mk69xaJOGBwN\nTVPLrHcL/EENMt+re1dWuZiri2NjmavZCnS8HjMQKbMhLb/+i49ZN0vCchrcB2gF\nQAX9nY1YIex1ozFiTYN/mWeSzRxuuEwCYOrhe8JSCgicrZ7LusLTKGTRleJWRfcj\nBScQ3hHoDZsNbEU4eCGXu9y1U5dt8p1l45ymoAcoVv+VO6EKcjbVej5DFJdUNKjk\nc0vfFNxcFxfcEspCDN/XNpvockIBvFWwlzzFJawhdQKBgQD7ePTRCRSyHwPwvzUB\nFPTRHzcw4v7CplT39i3QAIAXuoqBKNZhWJoDMR7WKrkNXFKoy7wdUvOigr9pQv3U\nrYu2QzzMxobCVTX2nKF7QRDILQmq42uI4qlRQw4egAioGXmsoSnfAf6AiVeTvBHI\nTb79/1pOSoRiwBWgYaLN2C56lwKBgQDLicvupollg22tugI6NQPcdtSkPKziFKjl\ninrKOXlnQjlLm9z64VnY2o3VN3NnDrOGb3h+cPQZojBYpNfrdE8r3CGHi+ElHKBS\nmzXD07IxpXrzLWkD3qhmAG7+m3r4Sz0BTYdbBRgEGfHA4sWJuMA+B8tij5Ias+5k\ntpH6zgpfZQKBgF9RTLKDF6YgXXT+dM/RKq6tf1T3ZYtQUrqeRGUoG2VjHqawXPoP\nBGmbT83r6bKnwOkcOFSBIboChx0V+HKJyYAvYjdYNLIqbEbqvcajNgI6GAT/KL58\n86LKoOpsq1tUNKt7dwyBi/8aj+h+i9r5pSBPjuJIGn/3wPrGp1gQziVHAoGBALnR\nMEvM4Ey74wqicVwggEjqd5EFD7RKtjLw7M7oD6y0achcIC8uQq9WP/wy5nlkk4Md\nCz0r873fMxIKVFFR2uGo0zeC/WW7L6aaqkgAYYMvlwKhJ2lwAf81UB/DZE1/qs8g\nr3zqNpWv9eRpY3wrHd7DkOuHNRSJxg9OGhGFvzR9AoGBAOrMNv2A6Tdsz2mDpC0K\n/BdHTEUGwD7LcDmtkN2Q4nz3SQC8HAFcYv5zHyKDyxIXjbDpbLQLxaU6KQDHRoa5\n3OdNTER0ZAuZ+VtQzGtNLZ+TVGsl3LEVQJUdiF065y/ACQatcBjJxLyeVCaK0a+f\nXxqWu1PZNdrO2bDV+oDvDKYu\n-----END PRIVATE KEY-----\n",
+  "client_email": "google-vision@wise-obelisk-174917.iam.gserviceaccount.com",
+  "client_id": "103470207371206876626",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/google-vision%40wise-obelisk-174917.iam.gserviceaccount.com"
+}
